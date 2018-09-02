@@ -4,7 +4,6 @@
       <div class="title">管理平台(cPay管理端)</div>
       <div class="formFloor">
         <img class="logo"
-          @click="showPassword()"
           src="../assets/sign-icon.png">
         <div class="formCont">
           <Input v-model="userName"
@@ -20,6 +19,7 @@
             style="width:236px;height:35px;" />
           <Button type="primary"
             class="loginBtn"
+            @click="loginBtnClick()"
             style="width:236px;">
             确定
             <!-- <Icon class="loginBtn_icon"
@@ -44,6 +44,10 @@ export default {
   methods: {
     showPassword: function () {
       this.showPass = !this.showPass
+    },
+    loginBtnClick () {
+      console.log('登录成功')
+      this.$router.push('/dashBoard')
     }
   }
 }
